@@ -1,5 +1,5 @@
 {
-  "name": "vue-project",
+  "name": "just-a-note",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -9,7 +9,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "axios": "^1.7.2",
     "normalize.css": "^8.0.1",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"

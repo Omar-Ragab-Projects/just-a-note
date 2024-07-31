@@ -1,1 +1,43 @@
-@import "./base/global";
+:root {
+  --mainColor: "blue";
+}
+
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}
+
+.note {
+  --sb-track-color: #1a1a1a;
+  --sb-thumb-color: #000000;
+  --sb-size: 10px;
+}
+
+.note::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+.note::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 3px;
+}
+
+.note::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 3px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .note {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
