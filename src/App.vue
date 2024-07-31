@@ -24,6 +24,7 @@
           v-model="noteContent"
         ></textarea>
         <div class="settings">
+          <span class="close" @click="editNoteView = false">X</span>
           <span class="edit" @click="editNoteBtn">Edit</span>
           <span class="delete" @click="deleteNoteBtn">Delete</span>
         </div>
@@ -94,6 +95,12 @@ function deleteNoteBtn() {
   justify-content: center;
   align-items: center;
   color: white;
+  font-size: 26px !important;
+  h1 {
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
   .note {
     background-color: #1b1b1b;
     width: 75%;
@@ -101,6 +108,11 @@ function deleteNoteBtn() {
     padding: 20px;
     position: relative;
     overflow-y: scroll;
+    @media (max-width: 767px) {
+      width: 85%;
+      height: 90%;
+    }
+
     .add {
       display: block;
       margin-left: auto;
@@ -129,7 +141,7 @@ function deleteNoteBtn() {
           transform: translate(0px, -2px);
         }
         .title {
-          font-size: 18px;
+          font-size: 24px;
         }
         .content {
           color: rgba(255, 255, 255, 0.6);
@@ -140,7 +152,7 @@ function deleteNoteBtn() {
           line-clamp: 2;
           -webkit-box-orient: vertical;
           line-height: 1.8;
-          font-size: 15px;
+          font-size: 20px;
         }
       }
     }
@@ -183,7 +195,7 @@ function deleteNoteBtn() {
         margin-left: auto;
         width: fit-content;
         padding: 8px;
-        font-size: 15px;
+        font-size: 24px;
         border-radius: 4px;
         cursor: pointer;
         user-select: none;
@@ -228,13 +240,27 @@ function deleteNoteBtn() {
       display: flex;
       align-items: center;
       justify-content: flex-end;
+      span.close {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        display: grid;
+        place-items: center;
+        top: 10px;
+        right: 10px;
+        border: 1px solid #614747;
+        border-radius: 50%;
+        cursor: pointer;
+        font-family: cursive;
+        font-size: 18px;
+      }
       span.edit {
         display: block;
         margin: 10px;
         // margin-left: auto;
         width: fit-content;
         padding: 8px;
-        font-size: 15px;
+        font-size: 20px;
         border-radius: 4px;
         cursor: pointer;
         user-select: none;
@@ -245,7 +271,7 @@ function deleteNoteBtn() {
         margin: 10px 10px 10px 0;
         width: fit-content;
         padding: 8px;
-        font-size: 15px;
+        font-size: 24px;
         border-radius: 4px;
         cursor: pointer;
         user-select: none;
