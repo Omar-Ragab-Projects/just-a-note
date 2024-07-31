@@ -24,7 +24,7 @@
           v-model="noteContent"
         ></textarea>
         <div class="settings">
-          <span class="close" @click="editNoteView = false">X</span>
+          <span class="close" @click="closeBtn">X</span>
           <span class="edit" @click="editNoteBtn">Edit</span>
           <span class="delete" @click="deleteNoteBtn">Delete</span>
         </div>
@@ -82,6 +82,11 @@ function deleteNoteBtn() {
   noteContent.value = "";
   editNoteView.value = false;
   localStorage.setItem("notes", JSON.stringify(notes.value));
+}
+function closeBtn() {
+  noteTitle.value = "";
+  noteContent.value = "";
+  editNoteView.value = false;
 }
 </script>
 
